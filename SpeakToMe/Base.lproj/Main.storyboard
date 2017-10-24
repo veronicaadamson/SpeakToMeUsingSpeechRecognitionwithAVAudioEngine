@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11125" systemVersion="16A185" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11099"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,31 +22,73 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="prE-ge-ovy">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BvJ-kr-w2B" userLabel="DB Text View">
+                                <rect key="frame" x="16" y="28" width="343" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="92" id="jis-iO-hDo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTt-mO-ujw">
+                                <rect key="frame" x="148" y="147" width="78" height="30"/>
+                                <state key="normal" title="Read to Me"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xe-MP-Nm9">
+                                <rect key="frame" x="16" y="205" width="343" height="30"/>
                                 <state key="normal" title="Start Recording!"/>
                                 <connections>
                                     <action selector="recordButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ugn-XV-Kkw"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="prE-ge-ovy">
+                                <rect key="frame" x="16" y="243" width="343" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="iS2-cz-TUR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPp-bj-mgN" userLabel="Next Exercise Button">
+                                <rect key="frame" x="141" y="532" width="93" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" playsSound="YES"/>
+                                </accessibility>
+                                <state key="normal" title="Next Exercise"/>
+                                <connections>
+                                    <action selector="onButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a64-xl-wVu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2RI-qZ-YA9" userLabel="Please Correct Me Button">
+                                <rect key="frame" x="124" y="480" width="127" height="30"/>
+                                <state key="normal" title="Please Correct Me"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="top" secondItem="prE-ge-ovy" secondAttribute="bottom" constant="8" id="8KE-3r-LRJ"/>
-                            <constraint firstItem="prE-ge-ovy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Bm5-tl-107"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7xe-MP-Nm9" secondAttribute="bottom" constant="20" id="EZf-x0-sxf"/>
-                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FDx-qi-xq2"/>
-                            <constraint firstItem="prE-ge-ovy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="OQc-uv-6Eu"/>
-                            <constraint firstItem="prE-ge-ovy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="P4r-Ub-aGz"/>
-                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="WKN-QJ-gpj"/>
+                            <constraint firstItem="mTt-mO-ujw" firstAttribute="top" secondItem="BvJ-kr-w2B" secondAttribute="bottom" constant="27" id="4og-nX-xuD"/>
+                            <constraint firstItem="vPp-bj-mgN" firstAttribute="top" secondItem="2RI-qZ-YA9" secondAttribute="bottom" constant="22" id="6kp-cP-gfG"/>
+                            <constraint firstItem="prE-ge-ovy" firstAttribute="centerX" secondItem="2RI-qZ-YA9" secondAttribute="centerX" id="9aa-bc-7cf"/>
+                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="top" secondItem="mTt-mO-ujw" secondAttribute="bottom" constant="28" id="Dda-nJ-UBP"/>
+                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="trailing" secondItem="prE-ge-ovy" secondAttribute="trailing" id="E9a-rC-A4c"/>
+                            <constraint firstItem="BvJ-kr-w2B" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="LMp-8V-Yte"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vPp-bj-mgN" secondAttribute="bottom" constant="105" id="MfL-oR-QNA"/>
+                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="leading" secondItem="prE-ge-ovy" secondAttribute="leading" id="Nf6-NG-TRG"/>
+                            <constraint firstItem="prE-ge-ovy" firstAttribute="top" secondItem="7xe-MP-Nm9" secondAttribute="bottom" constant="8" symbolic="YES" id="Oxs-yw-DF3"/>
+                            <constraint firstItem="mTt-mO-ujw" firstAttribute="centerX" secondItem="7xe-MP-Nm9" secondAttribute="centerX" id="QNS-06-xYc"/>
+                            <constraint firstItem="BvJ-kr-w2B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Xki-4J-WwM"/>
+                            <constraint firstItem="BvJ-kr-w2B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YRv-BO-usB"/>
+                            <constraint firstItem="2RI-qZ-YA9" firstAttribute="centerX" secondItem="vPp-bj-mgN" secondAttribute="centerX" id="i5Q-LO-gcg"/>
+                            <constraint firstItem="BvJ-kr-w2B" firstAttribute="leading" secondItem="7xe-MP-Nm9" secondAttribute="leading" id="uWx-Bb-mxf"/>
+                            <constraint firstItem="BvJ-kr-w2B" firstAttribute="trailing" secondItem="7xe-MP-Nm9" secondAttribute="trailing" id="uwH-CA-aK8"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="onButton" destination="vPp-bj-mgN" id="xnU-QB-FJY"/>
+                        <outlet property="readButton" destination="mTt-mO-ujw" id="wiT-Db-hhL"/>
                         <outlet property="recordButton" destination="7xe-MP-Nm9" id="WtH-Dp-x5U"/>
                         <outlet property="textView" destination="prE-ge-ovy" id="xF3-eW-DoN"/>
                     </connections>

@@ -8,9 +8,15 @@
 
 import UIKit
 import Speech
+import Firebase
+
 
 public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     // MARK: Properties
+    
+    private var exercises = [Exercise]()
+    
+    private var exerciseIndex = 0
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))!
     
@@ -24,6 +30,14 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     @IBOutlet var recordButton : UIButton!
     
+    @IBOutlet var onButton : UIButton!
+    
+    @IBOutlet var readButton : UIButton!
+    
+    
+
+    
+    
     // MARK: UIViewController
     
     public override func viewDidLoad() {
@@ -31,6 +45,23 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         
         // Disable the record buttons until authorization has been granted.
         recordButton.isEnabled = false
+        
+        
+        
+        let rootNode = Database.database().reference()
+        let exercisesNode = Database.database().reference().child("Exercises")
+        exercisesNode.observe(.childAdded) { (snapshot: DataSnapshot) in
+            let exerciseID = snapshot.key
+            let exercise = Exercise(id: exerciseID, dictionary: snapshot.value as AnyObject)
+            self.exercises.append(exercise)
+            DispatchQueue.main.async {
+                self.textView.text (in: exercise)
+            }
+        }
+        
+        
+        
+        
     }
     
     override public func viewDidAppear(_ animated: Bool) {
@@ -114,7 +145,7 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         
         try audioEngine.start()
         
-        textView.text = "(Go ahead, I'm listening)"
+        textView.text = "(Okay Speak Now...)"
     }
 
     // MARK: SFSpeechRecognizerDelegate
@@ -142,5 +173,16 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             recordButton.setTitle("Stop recording", for: [])
         }
     }
+    
+    @IBAction func onButton(_ sender: UIButton ) {
+        if sender == self {
+            if exerciseIndex + 1 < exercises.count {
+                exerciseIndex = exerciseIndex + 1
+                textView.text
+                
+            }
+        }
+    }
+    
 }
 
