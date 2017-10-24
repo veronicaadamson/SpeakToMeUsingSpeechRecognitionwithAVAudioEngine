@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+
 class Exercise{
     var id: String?
     var text: String?

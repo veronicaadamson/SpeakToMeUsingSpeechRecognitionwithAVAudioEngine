@@ -35,7 +35,18 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     @IBOutlet var readButton : UIButton!
     
     
+    convenience init() {
+        self.init()
+        FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
 
+    }
+    
+    required public convenience init?(coder aDecoder: NSCoder) {
+        self.init()
+        FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
+    }
     
     
     // MARK: UIViewController
@@ -48,14 +59,14 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         
         
         
-        let rootNode = Database.database().reference()
+       // let rootNode = Database.database().reference()
         let exercisesNode = Database.database().reference().child("Exercises")
         exercisesNode.observe(.childAdded) { (snapshot: DataSnapshot) in
             let exerciseID = snapshot.key
             let exercise = Exercise(id: exerciseID, dictionary: snapshot.value as AnyObject)
             self.exercises.append(exercise)
             DispatchQueue.main.async {
-                self.textView.text (in: exercise)
+                self.textView.text = "Hello!" //(in: exercise)
             }
         }
         
@@ -178,7 +189,7 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         if sender == self {
             if exerciseIndex + 1 < exercises.count {
                 exerciseIndex = exerciseIndex + 1
-                textView.text
+            //    textView.text
                 
             }
         }
