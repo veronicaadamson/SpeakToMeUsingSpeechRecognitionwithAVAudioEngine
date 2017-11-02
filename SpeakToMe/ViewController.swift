@@ -3,7 +3,7 @@
     See LICENSE.txt for this sample’s licensing information
     
     Abstract:
-    The primary view controller. The speach-to-text engine is managed an configured here.
+    The primary view controller. The speech-to-text engine is managed an configured here.
 */
 
 import UIKit
@@ -28,47 +28,51 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     @IBOutlet var textView : UITextView!
     
-    @IBOutlet var recordButton : UIButton!
+    @IBOutlet weak var recordButton: UIButton!
     
     @IBOutlet var onButton : UIButton!
     
     @IBOutlet var readButton : UIButton!
     
+    @IBOutlet weak var dbtextview: UITextView!
     
-    convenience init() {
-        self.init()
-        FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = true
+    //convenience init() {
+      //  super.init()
+        //FirebaseApp.configure()
+        //Database.database().isPersistenceEnabled = true
 
-    }
+    //}
     
-    required public convenience init?(coder aDecoder: NSCoder) {
-        self.init()
-        FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = true
-    }
+   // required public convenience init?(coder aDecoder: NSCoder) {
+//        self.init()
+//        FirebaseApp.configure()
+//        Database.database().isPersistenceEnabled = true
+//    }
     
     
     // MARK: UIViewController
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+        FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
+        print("App started!")
+
         // Disable the record buttons until authorization has been granted.
         recordButton.isEnabled = false
         
         
         
        // let rootNode = Database.database().reference()
-        let exercisesNode = Database.database().reference().child("Exercises")
-        exercisesNode.observe(.childAdded) { (snapshot: DataSnapshot) in
-            let exerciseID = snapshot.key
-            let exercise = Exercise(id: exerciseID, dictionary: snapshot.value as AnyObject)
-            self.exercises.append(exercise)
-            DispatchQueue.main.async {
-                self.textView.text = "Hello!" //(in: exercise)
-            }
-        }
+//        let exercisesNode = Database.database().reference().child("Exercises")
+//        exercisesNode.observe(.childAdded) { (snapshot: DataSnapshot) in
+//            let exerciseID = snapshot.key
+//            let exercise = Exercise(id: exerciseID, dictionary: snapshot.value as AnyObject)
+//            self.exercises.append(exercise)
+//            DispatchQueue.main.async {
+//                self.textView.text = "Hello!" //(in: exercise)
+//            }
+//        }
         
         
         
@@ -104,8 +108,8 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
     }
     
-    private func startRecording() throws {
-
+     private func startRecording() throws {
+        print("Start recording")
         // Cancel the previous task if it's running.
         if let recognitionTask = recognitionTask {
             recognitionTask.cancel()
@@ -129,10 +133,11 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         // We keep a reference to the task so that it can be cancelled.
         recognitionTask = speechRecognizer.recognitionTask(with: recognitionRequest) { result, error in
             var isFinal = false
-            
+            print("About to listen")
             if let result = result {
                 self.textView.text = result.bestTranscription.formattedString
                 isFinal = result.isFinal
+                print("Listening")
             }
             
             if error != nil || isFinal {
@@ -156,7 +161,7 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         
         try audioEngine.start()
         
-        textView.text = "(Okay Speak Now...)"
+        //textView.text = "(Okay Speak Now...)"
     }
 
     // MARK: SFSpeechRecognizerDelegate
@@ -185,15 +190,15 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         }
     }
     
-    @IBAction func onButton(_ sender: UIButton ) {
-        if sender == self {
-            if exerciseIndex + 1 < exercises.count {
-                exerciseIndex = exerciseIndex + 1
-            //    textView.text
-                
-            }
-        }
-    }
+//    @IBAction func onButton(_ sender: UIButton ) {
+//        if sender == self {
+//            if exerciseIndex + 1 < exercises.count {
+//                exerciseIndex = exerciseIndex + 1
+//            //    textView.text
+//                
+//            }
+//        }
+//    }
     
 }
 

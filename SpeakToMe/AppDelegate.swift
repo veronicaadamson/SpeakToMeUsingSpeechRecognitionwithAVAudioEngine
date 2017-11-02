@@ -7,9 +7,16 @@
 */
 
 import UIKit
+import Firebase
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+//     required public convenience init?(coder aDecoder: NSCoder) {
+//            self.init()
+//            FirebaseApp.configure()
+//            Database.database().isPersistenceEnabled = true
+//        }
 }

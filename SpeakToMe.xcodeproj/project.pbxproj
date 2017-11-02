@@ -13,6 +13,7 @@
 		7539A4761CE7A57600505E8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7539A4741CE7A57600505E8B /* Main.storyboard */; };
 		7539A4781CE7A57600505E8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7539A4771CE7A57600505E8B /* Assets.xcassets */; };
 		7539A47B1CE7A57600505E8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7539A4791CE7A57600505E8B /* LaunchScreen.storyboard */; };
+		8E01E3CC1FAAB26E00B80AFA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E01E3CB1FAAB26E00B80AFA /* GoogleService-Info.plist */; };
 		8EEDFBE61F986165007730D3 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEDFBE51F986165007730D3 /* Exercise.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		7539A4771CE7A57600505E8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7539A47A1CE7A57600505E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7539A47C1CE7A57600505E8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E01E3CB1FAAB26E00B80AFA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8EEDFBE51F986165007730D3 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		B56B3B031CEB85E1001766E2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BC326610A7CBB279BB2F41D0 /* Pods_SpeakToMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpeakToMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 				7539A4791CE7A57600505E8B /* LaunchScreen.storyboard */,
 				7539A47C1CE7A57600505E8B /* Info.plist */,
 				8EEDFBE51F986165007730D3 /* Exercise.swift */,
+				8E01E3CB1FAAB26E00B80AFA /* GoogleService-Info.plist */,
 			);
 			path = SpeakToMe;
 			sourceTree = "<group>";
@@ -159,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7539A47B1CE7A57600505E8B /* LaunchScreen.storyboard in Resources */,
+				8E01E3CC1FAAB26E00B80AFA /* GoogleService-Info.plist in Resources */,
 				7539A4781CE7A57600505E8B /* Assets.xcassets in Resources */,
 				7539A4761CE7A57600505E8B /* Main.storyboard in Resources */,
 			);

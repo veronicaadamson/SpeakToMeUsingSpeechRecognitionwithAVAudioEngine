@@ -26,10 +26,11 @@
                                 <rect key="frame" x="16" y="28" width="343" height="92"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="Ny5-te-x9y"/>
                                     <constraint firstAttribute="height" constant="92" id="jis-iO-hDo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTt-mO-ujw">
                                 <rect key="frame" x="148" y="147" width="78" height="30"/>
@@ -49,7 +50,7 @@
                                     <constraint firstAttribute="height" constant="100" id="iS2-cz-TUR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPp-bj-mgN" userLabel="Next Exercise Button">
@@ -87,9 +88,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dbtextview" destination="BvJ-kr-w2B" id="ikf-3F-Rf5"/>
                         <outlet property="onButton" destination="vPp-bj-mgN" id="xnU-QB-FJY"/>
                         <outlet property="readButton" destination="mTt-mO-ujw" id="wiT-Db-hhL"/>
-                        <outlet property="recordButton" destination="7xe-MP-Nm9" id="WtH-Dp-x5U"/>
+                        <outlet property="recordButton" destination="7xe-MP-Nm9" id="cPe-Lo-RFd"/>
                         <outlet property="textView" destination="prE-ge-ovy" id="xF3-eW-DoN"/>
                     </connections>
                 </viewController>
