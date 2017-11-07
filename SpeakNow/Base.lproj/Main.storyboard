@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11125" systemVersion="16A185" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11099"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeakToMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SpeakNow" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,30 +23,61 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="prE-ge-ovy">
+                                <rect key="frame" x="16" y="266" width="343" height="156"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="156" id="FkK-Xi-0Vk"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xe-MP-Nm9">
+                                <rect key="frame" x="16" y="209" width="343" height="30"/>
                                 <state key="normal" title="Start Recording!"/>
                                 <connections>
                                     <action selector="recordButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ugn-XV-Kkw"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDc-Pu-uYY" userLabel="Read Button">
+                                <rect key="frame" x="130" y="156" width="81" height="30"/>
+                                <state key="normal" title="Read To Me"/>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7yt-fP-fr5" userLabel="DB Text View">
+                                <rect key="frame" x="50" y="28" width="240" height="97"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="Jmf-im-qCm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r51-wE-94z" userLabel="Next Exercise Button">
+                                <rect key="frame" x="141" y="576" width="93" height="30"/>
+                                <state key="normal" title="Next Exercise"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="top" secondItem="prE-ge-ovy" secondAttribute="bottom" constant="8" id="8KE-3r-LRJ"/>
-                            <constraint firstItem="prE-ge-ovy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Bm5-tl-107"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7xe-MP-Nm9" secondAttribute="bottom" constant="20" id="EZf-x0-sxf"/>
-                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="FDx-qi-xq2"/>
-                            <constraint firstItem="prE-ge-ovy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="OQc-uv-6Eu"/>
-                            <constraint firstItem="prE-ge-ovy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="P4r-Ub-aGz"/>
-                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="WKN-QJ-gpj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="r51-wE-94z" secondAttribute="bottom" constant="61" id="3gY-pF-xOH"/>
+                            <constraint firstItem="7yt-fP-fr5" firstAttribute="centerX" secondItem="XDc-Pu-uYY" secondAttribute="centerX" id="4KE-s2-Lu5"/>
+                            <constraint firstItem="prE-ge-ovy" firstAttribute="top" secondItem="7xe-MP-Nm9" secondAttribute="bottom" constant="27" id="Kbu-am-XkI"/>
+                            <constraint firstItem="7yt-fP-fr5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="NU9-vW-o6q"/>
+                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="trailing" secondItem="prE-ge-ovy" secondAttribute="trailing" id="OOI-Pc-mUf"/>
+                            <constraint firstItem="XDc-Pu-uYY" firstAttribute="top" secondItem="7yt-fP-fr5" secondAttribute="bottom" constant="31" id="YAD-8f-cCM"/>
+                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="top" secondItem="XDc-Pu-uYY" secondAttribute="bottom" constant="23" id="frB-fN-dFb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7yt-fP-fr5" secondAttribute="trailing" constant="69" id="mN8-dC-Gtt"/>
+                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nM9-oO-tP7"/>
+                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="leading" secondItem="prE-ge-ovy" secondAttribute="leading" id="pg8-iH-9ss"/>
+                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="thA-Qh-4lG"/>
+                            <constraint firstItem="prE-ge-ovy" firstAttribute="centerX" secondItem="r51-wE-94z" secondAttribute="centerX" id="ywh-Qo-SQs"/>
+                            <constraint firstItem="7yt-fP-fr5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="34" id="zb7-eA-nfO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dbtextView" destination="7yt-fP-fr5" id="jQW-tM-EcA"/>
+                        <outlet property="nextButton" destination="r51-wE-94z" id="p4e-fa-dEp"/>
+                        <outlet property="readButton" destination="XDc-Pu-uYY" id="Btg-eK-2FA"/>
                         <outlet property="recordButton" destination="7xe-MP-Nm9" id="WtH-Dp-x5U"/>
                         <outlet property="textView" destination="prE-ge-ovy" id="xF3-eW-DoN"/>
                     </connections>

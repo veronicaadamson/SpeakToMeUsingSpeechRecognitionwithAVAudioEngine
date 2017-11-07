@@ -20,14 +20,21 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     private let audioEngine = AVAudioEngine()
     
+    @IBOutlet weak var dbtextView: UITextView!
+    
     @IBOutlet var textView : UITextView!
     
     @IBOutlet var recordButton : UIButton!
+    
+    @IBOutlet weak var readButton: UIButton!
+    
+    @IBOutlet weak var nextButton: UIButton!
     
     // MARK: UIViewController
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        textView.text = "Wazzup"
         
         // Disable the record buttons until authorization has been granted.
         recordButton.isEnabled = false
