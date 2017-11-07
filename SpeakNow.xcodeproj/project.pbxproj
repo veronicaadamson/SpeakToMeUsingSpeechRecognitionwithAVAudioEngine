@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7539A46D1CE7A57600505E8B /* SpeakToMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakToMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7539A46D1CE7A57600505E8B /* SpeakNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeakNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7539A4701CE7A57600505E8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7539A4721CE7A57600505E8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7539A4751CE7A57600505E8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 			isa = PBXGroup;
 			children = (
 				B56B3B031CEB85E1001766E2 /* README.md */,
-				7539A46F1CE7A57600505E8B /* SpeakToMe */,
+				7539A46F1CE7A57600505E8B /* SpeakNow */,
 				7539A46E1CE7A57600505E8B /* Products */,
 			);
 			indentWidth = 4;
@@ -50,12 +50,12 @@
 		7539A46E1CE7A57600505E8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7539A46D1CE7A57600505E8B /* SpeakToMe.app */,
+				7539A46D1CE7A57600505E8B /* SpeakNow.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7539A46F1CE7A57600505E8B /* SpeakToMe */ = {
+		7539A46F1CE7A57600505E8B /* SpeakNow */ = {
 			isa = PBXGroup;
 			children = (
 				7539A4701CE7A57600505E8B /* AppDelegate.swift */,
@@ -65,15 +65,15 @@
 				7539A4791CE7A57600505E8B /* LaunchScreen.storyboard */,
 				7539A47C1CE7A57600505E8B /* Info.plist */,
 			);
-			path = SpeakToMe;
+			path = SpeakNow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7539A46C1CE7A57600505E8B /* SpeakToMe */ = {
+		7539A46C1CE7A57600505E8B /* SpeakNow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7539A47F1CE7A57600505E8B /* Build configuration list for PBXNativeTarget "SpeakToMe" */;
+			buildConfigurationList = 7539A47F1CE7A57600505E8B /* Build configuration list for PBXNativeTarget "SpeakNow" */;
 			buildPhases = (
 				7539A4691CE7A57600505E8B /* Sources */,
 				7539A46A1CE7A57600505E8B /* Frameworks */,
@@ -83,9 +83,9 @@
 			);
 			dependencies = (
 			);
-			name = SpeakToMe;
+			name = SpeakNow;
 			productName = SpeakToMe;
-			productReference = 7539A46D1CE7A57600505E8B /* SpeakToMe.app */;
+			productReference = 7539A46D1CE7A57600505E8B /* SpeakNow.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -96,15 +96,16 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = "Henry Mason";
+				ORGANIZATIONNAME = "Veronica Adamson";
 				TargetAttributes = {
 					7539A46C1CE7A57600505E8B = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = WKQ9AWDZ95;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 7539A4681CE7A57600505E8B /* Build configuration list for PBXProject "SpeakToMe" */;
+			buildConfigurationList = 7539A4681CE7A57600505E8B /* Build configuration list for PBXProject "SpeakNow" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -117,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7539A46C1CE7A57600505E8B /* SpeakToMe */,
+				7539A46C1CE7A57600505E8B /* SpeakNow */,
 			);
 		};
 /* End PBXProject section */
@@ -261,9 +262,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = SpeakToMe/Info.plist;
+				DEVELOPMENT_TEAM = WKQ9AWDZ95;
+				INFOPLIST_FILE = SpeakNow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SpeakToMe";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SpeakNow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -274,9 +276,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = SpeakToMe/Info.plist;
+				DEVELOPMENT_TEAM = WKQ9AWDZ95;
+				INFOPLIST_FILE = SpeakNow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SpeakToMe";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.SpeakNow";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -285,7 +288,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7539A4681CE7A57600505E8B /* Build configuration list for PBXProject "SpeakToMe" */ = {
+		7539A4681CE7A57600505E8B /* Build configuration list for PBXProject "SpeakNow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7539A47D1CE7A57600505E8B /* Debug */,
@@ -294,7 +297,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7539A47F1CE7A57600505E8B /* Build configuration list for PBXNativeTarget "SpeakToMe" */ = {
+		7539A47F1CE7A57600505E8B /* Build configuration list for PBXNativeTarget "SpeakNow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7539A4801CE7A57600505E8B /* Debug */,
