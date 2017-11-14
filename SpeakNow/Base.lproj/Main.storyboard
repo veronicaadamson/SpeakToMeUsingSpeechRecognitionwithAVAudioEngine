@@ -26,9 +26,9 @@
                                 <rect key="frame" x="16" y="266" width="343" height="156"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="156" id="FkK-Xi-0Vk"/>
+                                    <constraint firstAttribute="height" constant="156" id="CPQ-jm-dYe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                             </textView>
@@ -44,34 +44,40 @@
                                 <state key="normal" title="Read To Me"/>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7yt-fP-fr5" userLabel="DB Text View">
-                                <rect key="frame" x="50" y="28" width="240" height="97"/>
+                                <rect key="frame" x="16" y="28" width="343" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="97" id="Jmf-im-qCm"/>
+                                    <constraint firstAttribute="height" constant="120" id="4yC-Jp-R85"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kX-Bx-BY8" userLabel="Send Button">
+                                <rect key="frame" x="129" y="430" width="82" height="30"/>
+                                <state key="normal" title="Send Result"/>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r51-wE-94z" userLabel="Next Exercise Button">
-                                <rect key="frame" x="141" y="576" width="93" height="30"/>
+                                <rect key="frame" x="124" y="568" width="93" height="30"/>
                                 <state key="normal" title="Next Exercise"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="r51-wE-94z" secondAttribute="bottom" constant="61" id="3gY-pF-xOH"/>
-                            <constraint firstItem="7yt-fP-fr5" firstAttribute="centerX" secondItem="XDc-Pu-uYY" secondAttribute="centerX" id="4KE-s2-Lu5"/>
-                            <constraint firstItem="prE-ge-ovy" firstAttribute="top" secondItem="7xe-MP-Nm9" secondAttribute="bottom" constant="27" id="Kbu-am-XkI"/>
-                            <constraint firstItem="7yt-fP-fr5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="NU9-vW-o6q"/>
-                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="trailing" secondItem="prE-ge-ovy" secondAttribute="trailing" id="OOI-Pc-mUf"/>
-                            <constraint firstItem="XDc-Pu-uYY" firstAttribute="top" secondItem="7yt-fP-fr5" secondAttribute="bottom" constant="31" id="YAD-8f-cCM"/>
-                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="top" secondItem="XDc-Pu-uYY" secondAttribute="bottom" constant="23" id="frB-fN-dFb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7yt-fP-fr5" secondAttribute="trailing" constant="69" id="mN8-dC-Gtt"/>
-                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nM9-oO-tP7"/>
-                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="leading" secondItem="prE-ge-ovy" secondAttribute="leading" id="pg8-iH-9ss"/>
-                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="thA-Qh-4lG"/>
-                            <constraint firstItem="prE-ge-ovy" firstAttribute="centerX" secondItem="r51-wE-94z" secondAttribute="centerX" id="ywh-Qo-SQs"/>
-                            <constraint firstItem="7yt-fP-fr5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="34" id="zb7-eA-nfO"/>
+                            <constraint firstItem="9kX-Bx-BY8" firstAttribute="top" secondItem="prE-ge-ovy" secondAttribute="bottom" constant="8" symbolic="YES" id="3n1-yM-kgr"/>
+                            <constraint firstItem="XDc-Pu-uYY" firstAttribute="trailing" secondItem="9kX-Bx-BY8" secondAttribute="trailing" id="41R-kg-lp4"/>
+                            <constraint firstItem="7yt-fP-fr5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Ff8-Dp-CmJ"/>
+                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="trailing" secondItem="prE-ge-ovy" secondAttribute="trailing" id="GBv-Ft-Tdx"/>
+                            <constraint firstItem="7yt-fP-fr5" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="J6x-zS-zbH"/>
+                            <constraint firstItem="7yt-fP-fr5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="L91-gK-5cN"/>
+                            <constraint firstItem="7yt-fP-fr5" firstAttribute="leading" secondItem="7xe-MP-Nm9" secondAttribute="leading" id="Svk-Qh-unY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="r51-wE-94z" secondAttribute="bottom" constant="69" id="UV2-RW-3fY"/>
+                            <constraint firstItem="9kX-Bx-BY8" firstAttribute="centerX" secondItem="r51-wE-94z" secondAttribute="centerX" id="YsC-xH-xuB"/>
+                            <constraint firstItem="7yt-fP-fr5" firstAttribute="trailing" secondItem="7xe-MP-Nm9" secondAttribute="trailing" id="are-e3-xWL"/>
+                            <constraint firstItem="XDc-Pu-uYY" firstAttribute="top" secondItem="7yt-fP-fr5" secondAttribute="bottom" constant="8" symbolic="YES" id="gVr-Ea-bSZ"/>
+                            <constraint firstItem="prE-ge-ovy" firstAttribute="top" secondItem="7xe-MP-Nm9" secondAttribute="bottom" constant="27" id="kXm-ep-Jf6"/>
+                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="leading" secondItem="prE-ge-ovy" secondAttribute="leading" id="nXP-gb-kt5"/>
+                            <constraint firstItem="r51-wE-94z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="124" id="sVp-k9-T4v"/>
+                            <constraint firstItem="7xe-MP-Nm9" firstAttribute="top" secondItem="XDc-Pu-uYY" secondAttribute="bottom" constant="23" id="zt1-Wa-18t"/>
                         </constraints>
                     </view>
                     <connections>
@@ -79,6 +85,7 @@
                         <outlet property="nextButton" destination="r51-wE-94z" id="p4e-fa-dEp"/>
                         <outlet property="readButton" destination="XDc-Pu-uYY" id="Btg-eK-2FA"/>
                         <outlet property="recordButton" destination="7xe-MP-Nm9" id="WtH-Dp-x5U"/>
+                        <outlet property="sendButton" destination="9kX-Bx-BY8" id="3Xl-BL-Nl0"/>
                         <outlet property="textView" destination="prE-ge-ovy" id="xF3-eW-DoN"/>
                     </connections>
                 </viewController>

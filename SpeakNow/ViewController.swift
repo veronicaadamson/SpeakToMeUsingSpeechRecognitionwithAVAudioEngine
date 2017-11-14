@@ -29,15 +29,17 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     @IBOutlet weak var readButton: UIButton!
     
+    @IBOutlet weak var sendButton: UIButton!
+    
     @IBOutlet weak var nextButton: UIButton!
     
     // MARK: UIViewController
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        textView.text = "Wazzup"
+        textView.text = "Speak Now"
         
-        dbtextView.text = "This is the first exercise."
+        dbtextView.text = "Loading your exercise..."
         
         FirebaseApp.configure ()
         
