@@ -1,0 +1,6 @@
+framework module Pods_SpeakNow {
+  umbrella header "Pods-SpeakNow-umbrella.h"
+
+  export *
+  module * { export * }
+}

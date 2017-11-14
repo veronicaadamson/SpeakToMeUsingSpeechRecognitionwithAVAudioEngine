@@ -8,7 +8,7 @@
 
 import UIKit
 import Speech
-//import Firebase
+import Firebase
 
 public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     // MARK: Properties
@@ -37,7 +37,28 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         super.viewDidLoad()
         textView.text = "Wazzup"
         
-//        FirebaseApp.configure ()
+        dbtextView.text = "This is the first exercise."
+        
+        FirebaseApp.configure ()
+        
+        var ref: DatabaseReference!
+        
+        ref = Database.database().reference()
+        
+        ref.child("Exercises").child("Ex1").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let text = value?["text"] as? String ?? ""
+            print (text)
+            
+            self.dbtextView.text = (text)
+            
+//            let user = User(username: username)
+            
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         
         
         // Disable the record buttons until authorization has been granted.
