@@ -39,7 +39,7 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         super.viewDidLoad()
         textView.text = "Speak Now"
         
-        dbtextView.text = "Loading your exercise..."
+        dbtextView.text = "Loading your exercise now..."
         
         FirebaseApp.configure ()
         
@@ -48,14 +48,14 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         ref = Database.database().reference()
         
         ref.child("Exercises").child("Ex1").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
+            // Get text value
             let value = snapshot.value as? NSDictionary
             let text = value?["text"] as? String ?? ""
             print (text)
             
             self.dbtextView.text = (text)
             
-//            let user = User(username: username)
+//            let text = Exercise(Ex1: text)
             
             // ...
         }) { (error) in
@@ -176,5 +176,18 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             recordButton.setTitle("Stop recording", for: [])
         }
     }
+    
+    
+//    @IBAction func readButtonTapped() {
+//        if audioEngine.isRunning {
+//            audioEngine.stop()
+//            recognitionRequest?.endAudio()
+//            readButton.isEnabled = false
+//            readButton.setTitle("Reading Stopped", for: .disabled)
+//        } else {
+//            try! startReading()
+//            readButton.setTitle("Stop reading", for: [])
+//        }
+//    }
 }
 
