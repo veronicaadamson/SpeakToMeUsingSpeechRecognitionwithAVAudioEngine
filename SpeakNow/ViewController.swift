@@ -8,6 +8,7 @@
 
 import UIKit
 import Speech
+//import Firebase
 
 public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     // MARK: Properties
@@ -35,6 +36,9 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     public override func viewDidLoad() {
         super.viewDidLoad()
         textView.text = "Wazzup"
+        
+//        FirebaseApp.configure ()
+        
         
         // Disable the record buttons until authorization has been granted.
         recordButton.isEnabled = false
