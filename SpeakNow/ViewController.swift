@@ -37,7 +37,7 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        textView.text = "Speak Now"
+        textView.text = "Press Record Button to start recording"
         
         dbtextView.text = "Loading your exercise now..."
         
@@ -47,20 +47,30 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
         
         ref = Database.database().reference()
         
-        ref.child("Exercises").child("Ex1").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get text value
-            let value = snapshot.value as? NSDictionary
-            let text = value?["text"] as? String ?? ""
-            print (text)
-            
-            self.dbtextView.text = (text)
-            
+        ref.child("Exercises").observe(.value, with: { snapshot in
+            print("test");
+            for child in (snapshot.children.allObjects as? [DataSnapshot])! {
+                let text: String? = child.childSnapshot(forPath: "text").value as? String;
+                if (text != nil) {
+                    print(text!);
+                }
+            }
+        })
+        
+//        ref.child("Exercises").child("Ex1").observeSingleEvent(of: .value, with: { (snapshot) in
+//            // Get text value
+//            let value = snapshot.value as? NSDictionary
+//            let text = value?["text"] as? String ?? ""
+//            print (text)
+//            
+//            self.dbtextView.text = (text)
+//            
 //            let text = Exercise(Ex1: text)
-            
-            // ...
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+//            
+//            // ...
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
         
         
         // Disable the record buttons until authorization has been granted.
