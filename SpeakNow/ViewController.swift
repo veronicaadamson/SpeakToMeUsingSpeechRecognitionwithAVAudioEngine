@@ -21,6 +21,8 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     private let audioEngine = AVAudioEngine()
     
+    private var currentExercise = "Ex1"
+    
     @IBOutlet weak var dbtextView: UITextView!
     
     @IBOutlet var textView : UITextView!
@@ -33,51 +35,20 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
     
     @IBOutlet weak var nextButton: UIButton!
     
+    
     // MARK: UIViewController
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        textView.text = "Press Record Button to start recording"
+        textView.text = "Press 'Start Recording' button to record"
         
         dbtextView.text = "Loading your exercise now..."
         
         FirebaseApp.configure ()
         
-        var ref: DatabaseReference!
-        
-        ref = Database.database().reference()
-        
-//        ref.child("Exercises").observe(.value, with: { snapshot in
-//            for child in (snapshot.children.allObjects as? [DataSnapshot])! {
-//                let text: String? = child.childSnapshot(forPath: "text").value as? String;
-//                if (text != nil) {
-//                    print(text!);
-//                }
-//            }
-//        })
-        
-        
-        let currentExercise: String = "Ex1"
-        
-        ref.child("Exercises").child(currentExercise).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get text value
-            let value = snapshot.value as? NSDictionary
-            let text = value?["text"] as? String ?? ""
-            print (text)
-            
-            self.dbtextView.text = (text)
-            
-            let next = value?["next"] as? String ?? ""
-            print (next)
-            
-//            let text = Exercise(Ex1: text)
-            
-            // ...
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
-        
+        indexExercise()
+
+    
         // Disable the record buttons until authorization has been granted.
         recordButton.isEnabled = false
     }
@@ -110,6 +81,32 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             }
         }
     }
+    
+    
+    private func indexExercise() {
+        
+        var ref: DatabaseReference!
+        
+        ref = Database.database().reference()
+        
+        ref.child("Exercises").child(currentExercise).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get text value
+            let value = snapshot.value as? NSDictionary
+            let text = value?["text"] as? String ?? ""
+            print (text)
+            
+            self.dbtextView.text = (text)
+            
+            self.currentExercise = value?["next"] as? String ?? ""
+            
+            print (self.currentExercise)
+            
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+
     
     private func startRecording() throws {
 
@@ -190,6 +187,14 @@ public class ViewController: UIViewController, SFSpeechRecognizerDelegate {
             try! startRecording()
             recordButton.setTitle("Stop recording", for: [])
         }
+    }
+    
+    
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        print("nextButtonTapped")
+        
+        indexExercise()
+        
     }
     
     
